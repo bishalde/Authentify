@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.io Example</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Connect to the server
+    const socket = io();
+
+    // Function to send data to the server
+    function sendData() {
+      const data = document.getElementById('dataInput').value;
+      socket.emit('clientData', data);
+    }
+
+    // Function to handle data received from the server
+    socket.on('serverData', (data) => {
+      document.getElementById('receivedData').innerHTML = data;
+    });
+  </script>
+</head>
+<body>
+  <h1>Socket.io Example</h1>
+  <input type="text" id="dataInput" placeholder="Enter data">
+  <button onclick="sendData()">Send Data</button>
+  <div id="receivedData"></div>
+</body>
+</html>
