@@ -21,7 +21,7 @@ const Navbar = () => {
       <Link href="/">
         <div className="logo">
           <h1 className="text-3xl font font-bold text-black">
-            K<span className=" text-primary">YC</span>
+            Authenti<span className=" text-primary">FY</span>
           </h1>
         </div>
       </Link>

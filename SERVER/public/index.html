@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Socket.io Example</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    // Connect to the server
-    const socket = io();
-
-    // Function to send data to the server
-    function sendData() {
-      const data = document.getElementById('dataInput').value;
-      socket.emit('clientData', data);
-    }
-
-    // Function to handle data received from the server
-    socket.on('serverData', (data) => {
-      document.getElementById('receivedData').innerHTML = data;
-    });
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Client</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
 </head>
 <body>
-  <h1>Socket.io Example</h1>
-  <input type="text" id="dataInput" placeholder="Enter data">
-  <button onclick="sendData()">Send Data</button>
-  <div id="receivedData"></div>
+    <h1>Socket.io Client</h1>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        const socket = io();
+        var count =0;
+
+        // Listen for messages from the server
+        socket.on('backend', (data) => {
+            document.getElementById('messages').innerHTML += `<p>${data.message}</p>`;
+        });
+
+        // Function to send message to the server
+        function sendMessage() {
+            const message = document.getElementById('messageInput').value;
+            socket.emit('clientside', { section: count, message }); // Adjust section as needed
+            document.getElementById('messageInput').value = '';
+            count++;
+        }
+    </script>
 </body>
 </html>

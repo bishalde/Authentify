@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="w-[70%] h-[1px] bg-slate-500"></div>
         </div>
         <h1 className="text-4xl font font-bold text-center text-white">
-          K<span className=" text-primary">YC</span>
+        Authenti<span className=" text-primary">FY</span>
         </h1>
         <h1 className=" text-center text-xl text-white"><pre> </pre></h1>
       </div>

@@ -33,7 +33,7 @@ export const HomePage = () => {
           </h2>
           <div className="clicks mt-5">
             <Link
-              href="/"
+              href="/register"
               className="btn-primary px-6 py-4  text-lg font-medium flex gap-2 "
             >
               GET STARTED{" "}

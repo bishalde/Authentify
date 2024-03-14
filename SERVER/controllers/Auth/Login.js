@@ -19,7 +19,7 @@ const Login = async (req, res, next) => {
         }
 
         // Create and sign JWT token
-        const token = jwt.sign({ dataRefObject: user.dataRefObject }, 'jwt', { expiresIn: '1h' });
+        const token = jwt.sign({ dataRefObject: user.dataRefObject }, 'jwt', { expiresIn: '30d' });
 
         // Respond with success message and token
         res.status(200).json({
