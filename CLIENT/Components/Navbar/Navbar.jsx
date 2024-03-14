@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="links flex  items-center justify-between gap-10 text-[17px]">
-        {navlinks.map((link, index) => {
+        {/* {navlinks.map((link, index) => {
           return (
             <Link
               href={link.link}
@@ -36,7 +36,7 @@ const Navbar = () => {
               {link.name}
             </Link>
           );
-        })}
+        })} */}
       </div>
       <div className="btns flex gap-3 items-center">
         <Link href="/login" className="btn-secondary">
